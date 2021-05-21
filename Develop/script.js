@@ -29,7 +29,7 @@ var generatePassword = function() {
     charset = "abcdefghijklmnopqrstuvwxyz",
     retVal = ""; 
 }
-    else if (confirmUpper) {
+  else if (confirmUpper) {
     charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     retVal = ""; 
 }
