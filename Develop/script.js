@@ -4,10 +4,6 @@ var retVal = "";
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate") 
 
-// var gatherInfo = function() {
-
-
-
 var generatePassword = function() {
   var inputLength = window.prompt("Choose a number between 8-128 to be your password length"); 
   
@@ -19,8 +15,6 @@ var generatePassword = function() {
     return null; 
   }
 
-
-
 var confirmLower = confirm("Press 'Ok' if you want lower case letters in your password");
 var confirmUpper = confirm("Press 'Ok' if you want upper case letters in your password");
 var confirmNumber = confirm("Press 'Ok' if you want numbers in your password");
@@ -31,15 +25,12 @@ var confirmSpecial = confirm("Press 'Ok' if you want special characters in your 
   if (confirmLower) {
     charset += "abcdefghijklmnopqrstuvwxyz"
   }
-
   if (confirmUpper) {
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   }
-
   if (confirmNumber) {
     charset += "123456789"
   }
-
   if (confirmSpecial) {
     charset += "!\"#$%&',()*+-./:;<>=@[]`{}|~"
   }
@@ -48,6 +39,7 @@ var confirmSpecial = confirm("Press 'Ok' if you want special characters in your 
         retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
+    
 }
 
 // Write password to the #password input
@@ -56,10 +48,12 @@ var writePassword = function() {
   if (password === null) {
       password = generatePassword(); 
   }
-  var passwordText = document.querySelector("#password");
 
+  var passwordText = document.querySelector("#password"); 
   passwordText.value = password;
 }
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
+// generateBtn.addEventListener("click", resetPassword); 
